@@ -1,5 +1,6 @@
 import Taro, { Component } from "@tarojs/taro";
-import { View, Text } from "@tarojs/components";
+import { View } from "@tarojs/components";
+import { Eleditor } from "@/components";
 import "./index.scss";
 
 export default class Index extends Component {
@@ -7,9 +8,11 @@ export default class Index extends Component {
     navigationBarTitleText: "首页"
   };
 
-  componentWillMount() {}
+  state = {
+    html: "看看看撒卡卡看"
+  };
 
-  componentDidMount() {}
+  componentWillMount() {}
 
   componentWillUnmount() {}
 
@@ -23,11 +26,21 @@ export default class Index extends Component {
   //   });
   // }
 
+  componentDidMount() {
+    // 配置项，在Quill 官网上有详细说
+    console.log("111", this.eleditor.state.value);
+  }
+
+  onChange() {
+    console.log("触发");
+  }
+
+  refEditor = node => (this.eleditor = node); // `this.eleditor` 会变成 `Eleditor` 组件实例的引用
+
   render() {
     return (
       <View className='index'>
-        <Text>Hello world!</Text>
-        {/* <View onClick={this.onClick}>跳转</View> */}
+        <Eleditor ref={this.refEditor} html={this.state.html} />
       </View>
     );
   }
