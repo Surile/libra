@@ -7,7 +7,8 @@
       { "extensions": [".js", ".jsx", ".tsx"] }
     ],
     "import/no-commonjs": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "import/first": "off"
   },
   "parser": "babel-eslint"
 }
