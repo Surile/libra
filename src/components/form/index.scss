@@ -1,5 +1,11 @@
 @import '../../style/theme.scss';
 
+.placeholder {
+    font-size: 26px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.38);
+}
+
 .form {
     padding: 0 20px;
 
@@ -58,11 +64,41 @@
 
 .school-des {
     margin-top: 15px;
-    color: rgba(0, 0, 0, 0.38);
-    font-size: 26px;
-    font-weight: 400;
+    @extend .placeholder;
+
 }
 
 .space {
     padding-bottom: 20px;
+}
+
+.at-input__container {
+    align-items: flex-start;
+}
+
+
+.at-switch {
+    margin-left: 0;
+}
+
+
+.at-input__children {
+    @extend .placeholder;
+
+    &:after {
+        margin-right: 40px;
+
+    }
+}
+
+
+.btn {
+    position: sticky;
+    bottom: 0;
+    padding: 20px 0;
+    @extend .placeholder;
+    color: $--color-white;
+    background: #F5AB32;
+    text-align: center;
+    margin-top: 20px;
 }
